@@ -1,0 +1,8 @@
+RewriteEngine On
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+RewriteRule ^(.*\.(gif|jpg|png))$ images/%{REQUEST_URI} [L,NC]
+
+ErrorDocument 404 "<center><h1>404 Not Found</h1></center><hr><center>nginx</center>"
